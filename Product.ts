@@ -1,14 +1,12 @@
-export class Product { 
+export class Product {
     price: number;
-    name: string;
-    brand: string;
-    barcode: string;
-    constructor(price: number, name: string, brand: string, barcode: string) {
+    description: string;
+    company: string;
+    code: string;
+    constructor(price: number, description: string, company: string, code: string) {
         this.price = price;
-        this.name = name;
-        this.brand = brand;
-        this.barcode = barcode;
-
+        this.description = description;
+        this.company = company;
+        this.code = code;
     }
 }
-

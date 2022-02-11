@@ -10,7 +10,7 @@ class CashRegister {
         this.consumer = consumer;
     }
     startNewPurchase(): void {
-        console.log('ERROR!!! No worker assigned');
+        throw Error('ERROR!!! No worker assigned');
         this.productsarray = [];
     }
     changeWorker(someone: StaffMember): void {
@@ -21,11 +21,7 @@ class CashRegister {
     }
     endPurchase(x: Consumer) {
         let sum: number;
-        if (this.consumer.finish == true) {
-            this.productsarray.forEach(p => {
-                sum += p.price;
-            })
-        }
+        this.productsarray.forEach(p => {sum += p.price;})
         return sum;
     }
 }

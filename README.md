@@ -5,7 +5,7 @@ Classes:
 - `Consumer`
 - `IPerson`
 - `Product` (`price`, `name`, `brand`, `barcode`)
-- `StaffMember`
+- `StaffMember` (`role`)
 
 Inheritance:
 `StaffMember` and `Consumer` inherit `IPerson`

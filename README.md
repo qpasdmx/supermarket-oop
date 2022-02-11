@@ -1,7 +1,7 @@
 # supermarket-oop
 
 Classes:
-- `CashRegister` 
+- `CashRegister` (`cashId`)
 - `Consumer`
 - `IPerson`
 - `Product` (`price`, `name`, `brand`, `barcode`)

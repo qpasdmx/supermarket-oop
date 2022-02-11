@@ -1,32 +1,40 @@
 import { StaffMember } from "./StaffMember";
 import { Consumer } from "./Consumer";
 import { Product } from "./Product";
-export class CashRegister {
-    CashRegisterNumber: number;
-    productsarray: Product[];
+export class CashRegister { 
+    cashId: number;
     worker: StaffMember;
-    consumer: Consumer;
+    products: Product[];
     private static cashIdCounter: number = 1;
-    constructor(CashRegisterNumber: number, productsarray?: Product[], worker?: StaffMember, consumer?: Consumer) {
-        this.CashRegisterNumber = CashRegisterNumber;
-        this.productsarray = productsarray;
+
+    constructor(worker?: StaffMember, products?: Product[], cashId?: number) {
         this.worker = worker;
-        this.consumer = consumer;
+        this.products = products;
+        this.cashId = cashId;
         CashRegister.cashIdCounter++;
     }
-    startNewPurchase(): void {
-        throw Error('ERROR!!! No worker assigned');
-        this.productsarray = [];
+
+    startNewPurchase() {
+        if (!this.worker) {
+            console.log('ERROR!!! No worker assigned');
+        }
+        else {
+            this.products = [];
+        }
     }
-    changeWorker(someone: StaffMember): void {
-        this.worker = someone;
+    changeWorker(sm: StaffMember) {
+        this.worker = sm;
     }
-    addProduct(item: Product): void {
-        this.productsarray.push(item);
+    addProduct(p: Product) {
+        this.products.push(p);
     }
-    endPurchase(x: Consumer) {
-        let sum: number;
-        this.productsarray.forEach(p => {sum += p.price;})
+    endPurchase(c: Consumer) {
+        var sum = 0;
+        if (c.isClubMember == true) { }
+            this.products.forEach(p => {
+                sum += p.price;
+
+            })
         return sum;
     }
 }

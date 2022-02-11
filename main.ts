@@ -18,7 +18,6 @@ const stands: CashRegister[] = [
     new CashRegister(cashiers[1])
 ];
 
-stands[0].startNewPurchase(); // ERROR!!! No worker assigned
 
 stands[0].changeWorker(cashiers[1]);
 stands[1].changeWorker(cashiers[0]);
@@ -28,6 +27,8 @@ stands[0].startNewPurchase();
 stands[0].addProduct(products[1]);
 stands[0].addProduct(products[1]);
 stands[0].addProduct(products[0]);
+
+stands[0].startNewPurchase(); // ERROR!!! In the middle of another bill
 
 
 const consumer = new Consumer(true);

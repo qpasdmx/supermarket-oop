@@ -1,10 +1,7 @@
-export class StaffMember implements IPerson {
-    firstName:string;
-    lastName:string;
+export class StaffMember implements IPerson { 
     role: string;
-    constructor(firstName:string, lastName:string, role: string) {
-        this.firstName=firstName;
-        this.lastName=lastName;
+    constructor(role: string) {
         this.role = role;
+
     }
 }

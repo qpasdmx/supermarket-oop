@@ -1,11 +1,6 @@
-export class Consumer implements IPerson {
-    firstName:string;
-    lastName:string;
+export class Consumer implements  IPerson {
     isClubMember: boolean;
-    constructor(firstName:string, lastName:string,  isClubMember: boolean) {
-        this.firstName= firstName;
-        this.lastName=lastName;
-        this.isClubMember =  isClubMember;
-
+    constructor(isClubMember: boolean) {
+        this.isClubMember = isClubMember;
     }
 }

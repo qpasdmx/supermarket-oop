@@ -3,11 +3,13 @@ class CashRegister {
     productsarray: Product[];
     worker: StaffMember;
     consumer: Consumer;
+    private static cashIdCounter: number = 1;
     constructor(CashRegisterNumber: number, productsarray?: Product[], worker?: StaffMember, consumer?: Consumer) {
         this.CashRegisterNumber = CashRegisterNumber;
         this.productsarray = productsarray;
         this.worker = worker;
         this.consumer = consumer;
+        CashRegister.cashIdCounter++;
     }
     startNewPurchase(): void {
         throw Error('ERROR!!! No worker assigned');

@@ -1,3 +1,6 @@
+import { StaffMember } from "./StaffMember";
+import { Consumer } from "./Consumer";
+import { Product } from "./Product";
 class CashRegister {
     CashRegisterNumber: number;
     productsarray: Product[];

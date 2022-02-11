@@ -1,7 +1,10 @@
 export class StaffMember implements IPerson {
+    firstName:string;
+    lastName:string;
     role: string;
-    constructor(name: string, age: number, role: string) {
-        super(name, age);
+    constructor(firstName:string, lastName:string, role: string) {
+        this.firstName=firstName;
+        this.lastName=lastName;
         this.role = role;
     }
 }
